@@ -25,14 +25,14 @@
     The codes in the folder of A1, A2, B1, B2 are used to pre-process and generate data.
     The codes in "main.py" is used to build and train the models for each task.
     
-3. The packages required to run your code
-    tensorflow
-    tensorflow.keras.models
-    tensorflow.keras.layers
-    tensorflow.keras.callbacks
-    tensorflow.keras.utils
-    sklearn.model_selection
-    numpy 
-    pickle
-    time
-    os
+3. The packages required to run your code:
+    tensorflow,
+    tensorflow.keras.models,
+    tensorflow.keras.layers,
+    tensorflow.keras.callbacks,
+    tensorflow.keras.utils,
+    sklearn.model_selection,
+    numpy,
+    pickle,
+    time,
+    os.
