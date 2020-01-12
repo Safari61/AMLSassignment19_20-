@@ -16,9 +16,9 @@ model_name = "A1-{}".format(int(time.time()))
 tensorboard = TensorBoard(log_dir = os.path.join(model_name, str(time.time())))
 # define the log name of the training process, which could be used by the tensorboard later
 
-pickle_in = open("E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_SN12345678\Datasets\img_array_A.pickle","rb")
+pickle_in = open(r"E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_Youhua.Liu_SN19074557\Datasets\img_array_A.pickle","rb")
 X = pickle.load(pickle_in)
-pickle_in = open("E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_SN12345678\Datasets\sex.pickle","rb")
+pickle_in = open(r"E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_Youhua.Liu_SN19074557\Datasets\sex.pickle","rb")
 y = pickle.load(pickle_in)  # load data
 
 X = np.array(X)
@@ -30,17 +30,17 @@ pixels = pixels/255.0  # scale them into the range of [0,1], which could be acce
 
 model = Sequential()  # initial a sequential CNN network
 
-model.add(Conv2D(16, (3, 3), input_shape=pixels.shape[1:]))
+model.add(Conv2D(32, (3, 3), input_shape=pixels.shape[1:]))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))  # add a convolution layer and corresponding activation and pooling layer
 
-model.add(Conv2D(16, (3, 3)))
+model.add(Conv2D(32, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))  # add a convolution layer and corresponding activation and pooling layer
 
 model.add(Flatten())  # flatten high dimensional data into 1D
 
-model.add(Dense(16))
+model.add(Dense(32))
 model.add(Activation('relu'))  # add a dense layer to the model
 
 model.add(Dense(1))
@@ -51,7 +51,7 @@ model.compile(loss='binary_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])  # add the loss layer to the model, define the loss function
 
-A1 = model.fit(pixels, y_train, batch_size=16, epochs=7, validation_split=0.2, callbacks = [tensorboard])
+A1 = model.fit(pixels, y_train, batch_size=32, epochs=7, validation_split=0.2, callbacks = [tensorboard])
 # feed data into the model, and start training.
 acc_A1_train = A1.history['accuracy'][6]  # get the accuracy of training set
 model.save('A1.model')  # save the model
@@ -68,9 +68,9 @@ acc_A1_test = test_result[1]  # get the accuracy of test set
 model_name = "A2-{}".format(int(time.time()))
 tensorboard = TensorBoard(log_dir = os.path.join(model_name, str(time.time())))
 # define the log name of the training process, which could be used by the tensorboard later
-pickle_in = open("E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_SN12345678\Datasets\img_array_A.pickle","rb")
+pickle_in = open("E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_Youhua.Liu_SN19074557\Datasets\img_array_A.pickle","rb")
 X = pickle.load(pickle_in)
-pickle_in = open("E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_SN12345678\Datasets\smile.pickle","rb")
+pickle_in = open("E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_Youhua.Liu_SN19074557\Datasets\smile.pickle","rb")
 y = pickle.load(pickle_in)  # load data
 
 X = np.array(X)
@@ -83,17 +83,17 @@ pixels = pixels/255.0  # scale them into the range of [0,1], which could be acce
 
 model = Sequential()  # initial a sequential CNN network
 
-model.add(Conv2D(16, (3, 3), input_shape=pixels.shape[1:]))
+model.add(Conv2D(32, (3, 3), input_shape=pixels.shape[1:]))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))  # add a convolution layer and corresponding activation and pooling layer
 
-model.add(Conv2D(16, (3, 3)))
+model.add(Conv2D(32, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))  # add a convolution layer and corresponding activation and pooling layer
 
 model.add(Flatten())  # flatten high dimensional data into 1D
 
-model.add(Dense(16))
+model.add(Dense(32))
 model.add(Activation('relu'))  # add a dense layer to the model
 
 model.add(Dense(1))
@@ -103,7 +103,7 @@ model.compile(loss='binary_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])  # add the loss layer to the model, define the loss function
 
-A2 = model.fit(pixels, y_train, batch_size=16, epochs=4, validation_split=0.2, callbacks = [tensorboard])
+A2 = model.fit(pixels, y_train, batch_size=32, epochs=4, validation_split=0.2, callbacks = [tensorboard])
 # feed data into the model, and start training.
 acc_A2_train = A2.history['accuracy'][3]  # get the accuracy of training set
 model.save('A2.model')  # save the model
@@ -120,9 +120,9 @@ acc_A2_test = test_result[1]  # get the accuracy of test set
 model_name = "B1-{}".format(int(time.time()))
 tensorboard = TensorBoard(log_dir = os.path.join(model_name, str(time.time())))
 # define the log name of the training process, which could be used by the tensorboard later
-pickle_in = open("E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_SN12345678\Datasets\img_array_B.pickle","rb")
+pickle_in = open("E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_Youhua.Liu_SN19074557\Datasets\img_array_B.pickle","rb")
 X = pickle.load(pickle_in)
-pickle_in = open("E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_SN12345678\Datasets\eye_color.pickle","rb")
+pickle_in = open("E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_Youhua.Liu_SN19074557\Datasets\eye_color.pickle","rb")
 y = pickle.load(pickle_in)  # load data
 
 X = np.array(X)
@@ -136,17 +136,17 @@ y_train = to_categorical(y_train, 5)  # convert labels from integers to binary c
 
 model = Sequential()  # initial a sequential CNN network
 
-model.add(Conv2D(16, (3, 3), input_shape=pixels.shape[1:]))
+model.add(Conv2D(32, (3, 3), input_shape=pixels.shape[1:]))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))  # add a convolution layer and corresponding activation and pooling layer
 
-model.add(Conv2D(16, (3, 3)))
+model.add(Conv2D(32, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))  # add a convolution layer and corresponding activation and pooling layer
 
 model.add(Flatten())  # flatten high dimensional data into 1D
 
-model.add(Dense(16))
+model.add(Dense(32))
 model.add(Activation('relu'))  # add a dense layer to the model
 
 model.add(Dense(5))
@@ -156,7 +156,7 @@ model.compile(loss='categorical_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])  # add the loss layer to the model, define the loss function
 
-B1 = model.fit(pixels, y_train, batch_size=16, epochs=10, validation_split=0.2, callbacks = [tensorboard])
+B1 = model.fit(pixels, y_train, batch_size=32, epochs=10, validation_split=0.2, callbacks = [tensorboard])
 # feed data into the model, and start training.
 acc_B1_train = B1.history['accuracy'][9]  # get the accuracy of training set
 model.save('B1.model')  # save the model
@@ -174,9 +174,9 @@ acc_B1_test = test_result[1]  # get the accuracy of test set
 model_name = "B2-{}".format(int(time.time()))
 tensorboard = TensorBoard(log_dir = os.path.join(model_name, str(time.time())))
 # define the log name of the training process, which could be used by the tensorboard later
-pickle_in = open("E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_SN12345678\Datasets\img_array_B.pickle","rb")
+pickle_in = open("E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_Youhua.Liu_SN19074557\Datasets\img_array_B.pickle","rb")
 X = pickle.load(pickle_in)
-pickle_in = open(r"E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_SN12345678\Datasets\face_shape.pickle","rb")
+pickle_in = open(r"E:\machine learning\project\AMLS_assignment_kit\project_organization_example\AMLS_19-20_Youhua.Liu_SN19074557\Datasets\face_shape.pickle","rb")
 y = pickle.load(pickle_in)  # load data
 
 X = np.array(X)
@@ -190,17 +190,17 @@ y_train = to_categorical(y_train,5)  # convert labels from integers to binary cl
 
 model = Sequential()  # initial a sequential CNN network
 
-model.add(Conv2D(16, (3, 3), input_shape=pixels.shape[1:]))
+model.add(Conv2D(32, (3, 3), input_shape=pixels.shape[1:]))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))  # add a convolution layer and corresponding activation and pooling layer
 
-model.add(Conv2D(16, (3, 3)))
+model.add(Conv2D(32, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))  # add a convolution layer and corresponding activation and pooling layer
 
 model.add(Flatten())  # flatten high dimensional data into 1D
 
-model.add(Dense(16))
+model.add(Dense(32))
 model.add(Activation('relu'))  # add a dense layer to the model
 
 model.add(Dense(5))
@@ -210,7 +210,7 @@ model.compile(loss='categorical_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])  # add the loss layer to the model, define the loss function
 
-B2 = model.fit(pixels, y_train, batch_size=16, epochs=10, validation_split=0.2, callbacks = [tensorboard])
+B2 = model.fit(pixels, y_train, batch_size=32, epochs=10, validation_split=0.2, callbacks = [tensorboard])
 # feed data into the model, and start training.
 acc_B2_train = B2.history['accuracy'][9]  # get the accuracy of training set
 model.save('B2.model')  # save the model
